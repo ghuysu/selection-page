@@ -50,7 +50,8 @@ const UserProfile = () => {
   };
 
   const handleOpenApp = () => {
-    const deepLinkUrl = `app://open.my.app`;
+    const { _id, fullname, profileImageUrl } = infor;
+    const deepLinkUrl = `app://open.my.app/${_id}/${encodeURIComponent(fullname)}/${encodeURIComponent(profileImageUrl)}`;
     window.location.href = deepLinkUrl; // Redirect to the mobile app
   };
 
